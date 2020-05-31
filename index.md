@@ -1,14 +1,15 @@
  <HTML style="width:100%;height:100%;">
  <head>
-  <title>Тут ничего нет!!!</title>
  </head>
-  <body style="width:100%;height:100%;">
-   <table style="width:100%;height:100%;">
-    <tr>
-     <td style="text-align:center;font-size:22pt;">
-      Тут нет ниего!<br>ОТ СЛОВА СОВСЕМ!
-     </td>
-    </tr>
-   </table>
+  <body>
+   <H1>Заголовок уровня 1</H1>
+   <H2>Заголовок уровня 2</H2>
+   <H3>Заголовок уровня 3</H3>
+   <H4>Заголовок уровня 4</H4>
+   <H5>Заголовок уровня 5</H5>
+   <H6>Заголовок уровня 6</H6>
+   <p class='code'>Абзац code</p>
+   <p>Абзац</p>
+   <p class='quote'>Абзац quote</p>
   </body>
  </HTML>
