@@ -1,6 +1,6 @@
  <HTML style="width:100%;height:100%;">
   <HEAD>
-   <title>“ут ничего нет!</title>
+   <title>Тут ничего нет!</title>
   </HEAD>
   <BODY style="width:100%;height:100%;">
    <table style="width:100%;height:100%;">
