@@ -2,6 +2,7 @@
  <head>
  </head>
   <body>
-<a href= "/nicht/">CCSKM</a>
+<a href= "/nicht/">Nicht</a>
+<a href= "/sub/">SUB</a>
   </body>
  </HTML>
