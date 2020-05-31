@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
  <HTML style="width:100%;height:100%;">
   <HEAD>
    <title>“ут ничего нет!</title>
