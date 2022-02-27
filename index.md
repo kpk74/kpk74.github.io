@@ -6,7 +6,7 @@
 <a href= "/sub/">SUB</a>
    <br><br>
 <a href= "/VyazovcevaOO/">Портфолио Вязовцевой О.О.</a> <br>
-<a href= "/informatika/">ЭОР Информатика</a>
-<a href= "/planeta/">Удивительная планета</a> 
+<a href= "/informatika/">ЭОР Информатика</a> <br>
+<a href= "/planeta/">Удивительная планета</a>  <br>
   </body>
  </HTML>
