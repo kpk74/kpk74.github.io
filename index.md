@@ -9,5 +9,6 @@
 <a href= "/informatika/">ЭОР Информатика</a> <br>
 <a href= "/planeta/">Удивительная планета</a> <br>
 <a href= "/Literatura/">Литература</a> <br>
+<a href= "/WOW/">История</a> <br>
   </body>
  </HTML>
