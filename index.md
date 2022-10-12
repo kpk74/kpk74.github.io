@@ -10,5 +10,6 @@
 <a href= "/planeta/">Удивительная планета</a> <br>
 <a href= "/literatura/">Литература</a> <br>
 <a href= "/WOW/">История</a> <br>
+   <a href= "/comp-design/">комп.дизайн</a> <br>
   </body>
  </HTML>
