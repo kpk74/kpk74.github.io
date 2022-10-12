@@ -6,7 +6,7 @@
 <a href= "/sub/">SUB</a>
    <br><br>
 
-<a href= "/Informatika/">ЭОР Информатика</a> <br>
+<a href= "/informatika/">ЭОР Информатика</a> <br>
 
   </body>
  </HTML>
