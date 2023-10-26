@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="cp-1251">
+
+	<title>ВОВ 1941-1945 годов</title>
+
+<style>
+a:link {color:#000000; text-decoration:none;}      /* unvisited link */
+a:visited {color:#000000; text-decoration:none;}  /* visited link */
+a:hover {color:#568211; text-decoration:none;}  /* mouse over link */
+a:active {color:#568211; text-decoration:none;}  /* selected link */
+
+#m a:link {color:#000000; text-decoration:none;}      /* unvisited link */
+#m a:visited {color:#000000; text-decoration:none;}  /* visited link */
+#m a:hover {color:#FFFFFF; text-decoration:none;}  /* mouse over link */
+#m a:active {color:#FFFFFF; text-decoration:none;}  /* selected link */
+</style>
+	
+	<script src="js/jquery.min.js"><\/script>
+
+
+
+
+
+
+
+	<!-- Add jQuery library -->
+
+	<script type="text/javascript" src="lib/jquery-1.10.1.min.js"></script>
+
+
+
+	<!-- Add mousewheel plugin (this is optional) -->
+
+	<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+
+
+	<!-- Add fancyBox main JS and CSS files -->
+
+	<script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+
+
+	<!-- Add Button helper (this is optional) -->
+
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+
+
+	<!-- Add Thumbnail helper (this is optional) -->
+
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+
+
+	<!-- Add Media helper (this is optional) -->
+
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+
+			$('.fancybox').fancybox();
+
+
+			/*
+			 *  Different effects
+			 */
+
+
+			// Change title type, overlay closing speed
+
+			$(".fancybox-effects-a").fancybox({
+
+				helpers: {
+
+					title : {
+
+						type : 'outside'
+
+					},
+
+					overlay : {
+
+						speedOut : 0
+
+					}
+
+				}
+
+			});
+
+
+			// Disable opening and closing animations, change title type
+
+			$(".fancybox-effects-b").fancybox({
+
+				openEffect  : 'none',
+
+				closeEffect	: 'none',
+
+
+				helpers : {
+
+					title : {
+
+						type : 'over'
+
+					}
+
+				}
+
+			});
+
+
+			// Set custom style, close if clicked, change title type and overlay color
+
+			$(".fancybox-effects-c").fancybox({
+
+				wrapCSS    : 'fancybox-custom',
+
+				closeClick : true,
+
+
+				openEffect : 'none',
+
+
+				helpers : {
+
+					title : {
+
+						type : 'inside'
+
+					},
+
+					overlay : {
+
+						css : {
+
+							'background' : 'rgba(238,238,238,0.85)'
+
+						}
+
+					}
+
+				}
+
+			});
+
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+
+			$(".fancybox-effects-d").fancybox({
+
+				padding: 0,
+
+
+				openEffect : 'elastic',
+
+				openSpeed  : 150,
+
+
+				closeEffect : 'elastic',
+
+				closeSpeed  : 150,
+
+
+				closeClick : true,
+
+
+				helpers : {
+
+					overlay : null
+
+				}
+
+			});
+
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+
+			$('.fancybox-buttons').fancybox({
+
+				openEffect  : 'none',
+
+				closeEffect : 'none',
+
+
+				prevEffect : 'none',
+
+				nextEffect : 'none',
+				closeBtn  : false,
+
+
+				helpers : {
+
+					title : {
+
+						type : 'inside'
+
+					},
+
+					buttons	: {}
+
+				},
+
+
+				afterLoad : function() {
+
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+
+				}
+
+			});
+
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+
+			$('.fancybox-thumbs').fancybox({
+
+				prevEffect : 'none',
+
+				nextEffect : 'none',
+
+
+				closeBtn  : false,
+
+				arrows    : false,
+
+				nextClick : true,
+
+
+				helpers : {
+
+					thumbs : {
+
+						width  : 50,
+
+						height : 50
+
+					}
+
+				}
+
+			});
+
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+
+			$('.fancybox-media')
+
+				.attr('rel', 'media-gallery')
+
+				.fancybox({
+
+					openEffect : 'none',
+
+					closeEffect : 'none',
+
+					prevEffect : 'none',
+
+					nextEffect : 'none',
+
+
+					arrows : false,
+
+					helpers : {
+
+						media : {},
+
+						buttons : {}
+
+					}
+
+				});
+
+
+			/*
+			 *  Open manually
+			 */
+
+
+			$("#fancybox-manual-a").click(function() {
+
+				$.fancybox.open('1_b.jpg');
+
+			});
+
+
+			$("#fancybox-manual-b").click(function() {
+
+				$.fancybox.open({
+
+					href : 'iframe.html',
+
+					type : 'iframe',
+
+					padding : 5
+
+				});
+
+			});
+
+
+			$("#fancybox-manual-c").click(function() {
+
+				$.fancybox.open([
+
+					{
+
+						href : '1_b.jpg',
+
+						title : 'My title'
+
+					}, {
+
+						href : '2_b.jpg',
+
+						title : '2nd title'
+
+					}, {
+
+						href : '3_b.jpg'
+
+					}
+
+				], {
+
+					helpers : {
+
+						thumbs : {
+
+							width: 75,
+
+							height: 50
+
+						}
+
+					}
+
+				});
+
+			});
+
+
+
+		});
+
+	</script>
+
+	<style type="text/css">
+
+		.fancybox-custom .fancybox-skin {
+
+			box-shadow: 0 0 50px #222;
+
+		}
+
+
+		body {
+
+			max-width: 1020px;
+
+			margin: 0 auto;
+
+		}
+
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Demo stuff -->
+
+	<link rel="stylesheet" href="demos/css/page.css">
+
+
+
+	<!-- Anything Slider -->
+
+	<link rel="stylesheet" href="css/anythingslider.css">
+
+	<script src="js/jquery.anythingslider.js"></script>
+
+
+
+
+
+	<!-- Define slider dimensions here -->
+
+	<style>
+
+	#slider { width: 930px; height: 390px; }
+
+	</style>
+
+
+
+
+	<!-- AnythingSlider initialization -->
+
+	<script>
+		// DOM Ready
+
+		$(function(){
+
+			$('#slider').anythingSlider();
+
+		});
+
+	</script>
+
+
+
+
+	<link rel="stylesheet" href="css/button.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+
+
+</head>
+
+
+<body id="simple">
+
+
+<table border="0" width="930" cellspacing="0" cellpadding="0" id="table6" height="100" style="padding-left: 50px">
+	<tr>
+		<td width="930" background="images/nazvanie.jpg">
+		<p align="center">&nbsp;</td>
+	</tr>
+</table>
+
+
+	<ul id="slider">
+
+		<li><img src="images/banner1.jpg" alt=""></li>
+
+
+		<li><img src="images/banner2.jpg" alt=""></li>
+
+
+		<li><img src="images/banner3.jpg" alt=""></li>
+
+
+		<li><img src="images/banner4.jpg" alt=""></li>
+		<li><img src="images/banner5.jpg" alt=""></li>
+
+
+		<li><img src="images/banner6.jpg" alt=""></li>
+
+
+		<li><img src="images/banner7.jpg" alt=""></li>
+
+
+		<li><img src="images/banner8.jpg" alt=""></li>
+
+
+		<li><img src="images/banner9.jpg" alt=""></li>
+
+
+		<li><img src="images/banner10.jpg" alt=""></li>
+
+
+
+
+	</ul>
+
+
+<div id='content' style="width: 930px; height: 15px">
+
+
+<table border="0" width="930" cellspacing="0" cellpadding="0" id="table1">
+	<tr>
+		<td width="300" align="left" valign="top">
+		
+		<table border="0" width="300" id="table2" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="24">
+				&nbsp;</td>
+				<td width="276">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 10px">
+				&nbsp;</td>
+				<td width="276" style="padding-bottom: 10px; padding-left:7px"><b>
+				<font face="Arial" style="font-size: 16pt" color="#568211">СОДЕРЖАНИЕ</font></b></td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left: 7px; padding-bottom:5px" align="left">
+				<font face="Arial" style="font-size: 12pt">
+				<a href="index.html">Введение</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left: 7px; padding-bottom:5px" align="left">
+				<font face="Arial" style="font-size: 12pt">
+				<a href="1.html">Основные периоды ВОВ</a></font></td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="2.html">История ВОВ</a></font></td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt">
+				<a target="_blank" href="3.html">Вступление СССР в войну</a></font></td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="4.html">План «Барбаросса»</a></font></td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="5.html">Битва за Москву</a></font></td>
+			</tr>
+			<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="6.html">Сталинградская битва</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="7.html">Курская битва</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="8.html">Оборона Ленинграда</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="9.html">План «Багратион»</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="10.html">Берлинская операция</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="11.html">Окончание Второй мировой войны</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="12.html">Итоги Великой Отечественной войны</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="13.html">Медиаматериалы</a></font></td>
+			</tr>
+				<tr>
+				<td width="24" style="padding-bottom: 5px">
+				<img border="0" src="images/1.png" width="24"></td>
+				<td width="276" style="padding-left:7px; padding-right:0; padding-top:0; padding-bottom:0" align="left">
+				
+				<font face="Arial" style="font-size: 12pt"><a href="14.html">Итоговый тест</a></font></td>
+			
+		</table>
+				</td>
+		<td width="630" align="left" valign="top" style="padding-top: 20px; padding-left:10px">
+		<p style="line-height: 150%; margin-top: 0; margin-bottom: 0; text-indent:25px">
+		<font face="Arial" style="font-size: 16pt; font-weight:700; font-style:italic" color="#568211">Сталинградская битва</font></p>
+		<p align="center" style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+		
+		
+
+		
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+Сталинградская битва считается одной из самых кровавых за всю историю человечества. Поскольку Сталинград был назван в честь вождя народов – Иосифа Сталина, советские воины делали все возможное, чтобы не дать противнику его захватить.
+
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+Перед тем, как начать активное наступление на Сталинград, Гитлер хотел оккупировать Крым и часть Украины. В результате немцы смогли овладеть Керченским полуостровом, Севастополем, Харьковом и Донбассом.
+
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+28 июля Сталин отдал приказ всеми силами удерживать Сталинград и ни на шаг не отступать назад.
+
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+Почти 4 месяца солдаты защищали Сталинград от нападения немецких войск. И только 
+19 ноября 1942 г. Красная Армия перешла в активное контрнаступление.&nbsp; 
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+Был проведен ряд успешных операций, в результате которых 2 февраля 1943 г. советские солдаты полностью разгромили фашистов.
+
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+За время Сталинградской битвы с обеих сторон погибло почти 3 000 000 человек, и были уничтожены сотни тысяч единиц разной боевой техники.
+
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+<font face="Arial">
+Сталинградская битва коренным образом повлияла на исход Великой Отечественной войны. С этого момента стратегическая и военная инициатива была на стороне Советского Союза. 
+</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+		 	 
+
+&nbsp;</p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">
+		 	 
+
+<img border="0" src="images/Komandir-sovetskoy-76-mm-divizionnoy-pushki-obraztsa-1942-goda-ZiS-3-otdaet-komandu-raschetu.-1943.jpg" width="400"></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">
+		 	 
+
+<font face="Arial">Командир советской 76-мм дивизионной пушки ЗиС-3</font></p>
+		<p style="text-indent: 25px; line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">
+		 	 
+
+<font face="Arial">отдает команду расчету, 1943 г.</font></p>
+		<p style="line-height: 150%; margin-top: 0; margin-bottom: 0; " align="justify">
+		&nbsp;</p>
+		<p style="line-height: 150%; margin-top: 0; margin-bottom: 0; " align="justify">
+		&nbsp;</p>
+		<div align="center">
+			<table border="0" width="400" cellspacing="0" cellpadding="0" height="31" id="table5">
+				<tr>
+					<td width="100" height="31" align="center" background="images/kn.png">
+					<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">
+					<b><font face="Arial" id="m"><a href="5.html">Назад</a></font></b></td>
+					<td width="200" height="31" align="center">&nbsp;</td>
+					<td width="100" height="31" align="center" background="images/kn.png">
+					<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">
+					<b><font face="Arial" id="m"><a href="7.html">Вперед</a></font></b></td>
+				</tr>
+			</table>
+		</div>
+		<p align="center" style="line-height: 150%; margin-top: 0; margin-bottom: 0">
+		&nbsp;</td>
+	</tr>
+			
+		
+		
+		<table border="0" width="930" cellspacing="0" cellpadding="0" height="17" id="table4" >
+				<tr>
+					<td height="20" bgcolor="#7C9227" style="border-radius: 0px 0px 25px 25px;  height:45px;" align="center">
+					<b>
+					<font face="Arial" color="#000000">
+					<i>
+					<marquee scrolldelay="30" bgcolor="#7C9227" scrollamount="2" style="border-radius: 0px 0px 25px 25px; height:45px; padding-top: 22px;">© Копейский политехнический колледж имени С.В. Хохрякова</marquee></i>
+					</font></b></td>
+				</tr>
+			</table>
+
+
+
+
+
+</div>
+
+
+
+
+<p><br>&nbsp;</p>
+
+
+
+
+<div id="back-top"><a href="#top"><img src="images/vverh.jpg"></a></div>
+<script>
+$(document).ready(function(){
+
+	$("#back-top").hide();
+	
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#back-top').fadeIn();
+			} else {
+				$('#back-top').fadeOut();
+			}
+		});
+		
+		$('#back-top a').click(function () {
+			jQuery('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+});
+</script>
+
+</body>
+
+
+</html>
