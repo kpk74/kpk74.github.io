@@ -7,7 +7,7 @@
      <li><a href= "/sub/">SUB</a></li>
      <li>&nbsp</li>
      <li><a href= "/informatika/">ЭОР Информатика</a> </li>
-     <li><a href= "/pushkin/">ЭОР Информатика</a> </li>
+     <li><a href= "/pushkin/">Пушкин</a> </li>
     
   </ul>  
     
