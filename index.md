@@ -2,11 +2,16 @@
  <head>
  </head>
   <body>
-<a href= "/nicht/">Nicht</a>
-<a href= "/sub/">SUB</a>
-   <br><br>
-
-<a href= "/informatika/">ЭОР Информатика</a> <br>
+   <ul>
+     <li><a href= "/nicht/">Nicht</a></li>
+     <li><a href= "/sub/">SUB</a></li>
+     <li>&nbsp</li>
+     <li><a href= "/informatika/">ЭОР Информатика</a> </li>
+     <li><a href= "/pushkin/">ЭОР Информатика</a> </li>
+    
+  </ul>  
+    
+    <br>
 
   </body>
  </HTML>
