@@ -8,6 +8,7 @@
      <li>&nbsp</li>
      <li><a href= "/informatika/">ЭОР Информатика</a> </li>
      <li><a href= "/Pushkin/">Пушкин</a> </li>
+     <li><a href= "/Dostoevskiy_F_M/">Достоевский Ф.М.</a> </li>
     
   </ul>  
     
